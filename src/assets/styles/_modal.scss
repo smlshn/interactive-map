@@ -1,0 +1,14 @@
+@import '~bootstrap/scss/mixins';
+
+.modal {
+  position: relative;
+  overflow: auto;
+}
+
+@include media-breakpoint-up(sm) {
+  .modal {
+    .modal-dialog {
+      min-width: 500px;
+    }
+  }
+}

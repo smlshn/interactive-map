@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="table-responsive bg-white" *ngIf="continent$ | async as continent">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Flag</th>
+          <th scope="col">Name</th>
+          <th scope="col">Import</th>
+          <th scope="col">Export</th>
+          <th scope="col" style="width: 30%">Note</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let country of continent.countries; let index = index; trackBy: trackByCountry">
+          <th scope="row">
+            {{ index + 1 }}
+          </th>
+          <td>
+            <img fallback [src]="country.flag?.file_url" [alt]="country.flag?.name" class="img-fluid" width="50" />
+          </td>
+          <td>{{ country.properties.name }}</td>
+          <td>
+            <ng-container *ngIf="country.import; else noContentRef">
+              <span class="badge badge-danger">Available</span>
+            </ng-container>
+          </td>
+          <td>
+            <ng-container *ngIf="country.export; else noContentRef">
+              <span class="badge badge-success">Available</span>
+            </ng-container>
+          </td>
+          <td>{{ country.note || '-' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<ng-template #noContentRef>-</ng-template>

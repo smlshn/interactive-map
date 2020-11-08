@@ -1,0 +1,22 @@
+<div
+  class="d-flex flex-column flex-sm-row justify-content-between flex-grow-1 position-relative px-15 my-2"
+  *ngIf="authService.user$ | async as user"
+>
+  <div class="d-flex mb-2">
+    <iwp-profile-card [user]="user" (logoutClick)="logout()"> </iwp-profile-card>
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="align-items-center d-flex h-100 nav-link text-white" routerLink="/detail">Detail</a>
+      </li>
+    </ul>
+  </div>
+  <div class="d-flex justify-content-between">
+    <div class="search-container">
+      <iwp-search *ngIf="searchVisible$ | async"></iwp-search>
+    </div>
+    <button class="btn btn-transparent" (click)="logout()">
+      <fa-icon [icon]="faSignOutAlt"></fa-icon>
+      Logout
+    </button>
+  </div>
+</div>

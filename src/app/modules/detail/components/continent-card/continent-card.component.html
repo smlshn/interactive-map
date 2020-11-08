@@ -1,0 +1,18 @@
+<a class="text-dark text-hover-primary text-decoration-none" [routerLink]="['/continent', continent.shortCode]">
+  <div class="card border-light mb-3">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      {{ continent.name }}
+      <span class="badge badge-primary badge-pill">{{ continent.countries.length }}</span>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Import/Export</h5>
+      <p class="card-text d-flex flex-column">
+        <ng-container *ngIf="continent.exportCountries.length || continent.importCountries.length; else noContentRef">
+          <span>Imports: {{ continent.importCountries.length }}</span>
+          <span>Exports: {{ continent.exportCountries.length }}</span>
+        </ng-container>
+        <ng-template #noContentRef> There are no import/export countries. </ng-template>
+      </p>
+    </div>
+  </div>
+</a>

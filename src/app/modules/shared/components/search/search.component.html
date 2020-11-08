@@ -1,0 +1,8 @@
+<div class="h-100 d-flex align-items-center">
+  <iwp-auto-complete
+    placeholder="Type to search countries"
+    [items]="filteredCountries$ | async"
+    [mapperFn]="mapperFn"
+    (onSelect)="onSelect($event)"
+  ></iwp-auto-complete>
+</div>

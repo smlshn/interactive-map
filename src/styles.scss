@@ -1,0 +1,14 @@
+@import 'assets/styles/variables';
+@import '~bootstrap/scss/bootstrap';
+@import 'assets/styles/index';
+@import '~@angular/cdk/overlay-prebuilt.css';
+
+html,
+body {
+  height: 100%;
+}
+
+.page-container {
+  background: url('/assets/images/login-bg.jpg');
+  background-size: cover;
+}

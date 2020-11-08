@@ -1,0 +1,10 @@
+<iwp-modal>
+  <iwp-modal-header [modalTitle]="ref.data.properties.name"></iwp-modal-header>
+  <iwp-modal-body>
+    <div class="form-group">
+      <label for="add-note">Add Note to {{ ref.data.properties.name }}</label>
+      <textarea class="form-control" id="add-note" placeholder="Add Note" [formControl]="control"></textarea>
+    </div>
+    <button class="btn btn-primary" (click)="addNote()" [disabled]="control.invalid">Add Note</button>
+  </iwp-modal-body>
+</iwp-modal>

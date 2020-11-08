@@ -1,0 +1,10 @@
+$icon-variants: (
+  'black': #000,
+  'white': #fff
+);
+
+@each $key, $color in $icon-variants {
+  .svg-fill-#{$key} {
+    fill: #{$color};
+  }
+}

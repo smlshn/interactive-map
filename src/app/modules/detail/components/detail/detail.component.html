@@ -1,0 +1,11 @@
+<div class="my-3">
+  <iwp-world-map [countries]="countries$ | async" (onMapUpdate)="onMapUpdate($event)"></iwp-world-map>
+
+  <hr />
+
+  <div class="row mt-3">
+    <div class="col-12 col-sm-6 col-lg-3" *ngFor="let continent of continents$ | async; trackBy: trackByContinent">
+      <iwp-continent-card [continent]="continent"></iwp-continent-card>
+    </div>
+  </div>
+</div>

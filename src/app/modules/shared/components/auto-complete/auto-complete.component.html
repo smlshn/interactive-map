@@ -1,0 +1,16 @@
+<input class="form-control" [placeholder]="placeholder" #input [formControl]="control" (focus)="onInputFocus()" />
+
+<ng-template #autocompleteDropRef>
+  <div class="auto-complete-container">
+    <div class="list-group">
+      <button
+        *ngFor="let result of searchResults"
+        type="button"
+        class="list-group-item list-group-item-action"
+        (click)="onItemClick(result, $event)"
+      >
+        {{ result.label }}
+      </button>
+    </div>
+  </div>
+</ng-template>

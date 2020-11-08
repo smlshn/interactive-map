@@ -1,0 +1,24 @@
+.map-holder {
+  height: 600px;
+
+  svg rect {
+    fill: #fff;
+  }
+
+  .country {
+    fill: #d0d0d0;
+    stroke: #2a2c39;
+    stroke-width: 1;
+    &-export {
+      fill: #76ff03;
+    }
+
+    &-import {
+      fill: #ff3d00;
+    }
+
+    &-hover {
+      fill: #4b5358;
+    }
+  }
+}

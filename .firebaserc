@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "silver-stratum-294619": {
+      "hosting": {
+        "interactive-world-map": [
+          "silver-stratum-294619"
+        ]
+      }
+    }
+  }
+}

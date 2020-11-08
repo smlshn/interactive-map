@@ -1,0 +1,7 @@
+@import '~bootstrap/scss/variables';
+
+a.text-hover-primary {
+  &:hover {
+    color: $primary !important;
+  }
+}

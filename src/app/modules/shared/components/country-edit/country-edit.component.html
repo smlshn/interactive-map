@@ -1,0 +1,43 @@
+<iwp-modal>
+  <iwp-modal-header [modalTitle]="country.properties.name"></iwp-modal-header>
+  <iwp-modal-body [formGroup]="form">
+    <div class="form-group">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          id="import"
+          name="importOrExport"
+          value="import"
+          formControlName="importOrExport"
+        />
+        <label class="form-check-label" for="import">Import</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          id="export"
+          name="importOrExport"
+          value="export"
+          formControlName="importOrExport"
+        />
+        <label class="form-check-label" for="export">Export</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="add-note">Add Note</label>
+      <textarea class="form-control" id="add-note" placeholder="Add Note" formControlName="note"></textarea>
+    </div>
+    <button class="btn btn-primary mr-2" (click)="addInfo()">
+      <fa-icon [icon]="faPlus"></fa-icon>
+      {{ country.import || country.export || country.note ? 'Update' : 'Add' }} Info
+    </button>
+    <button class="btn btn-danger" (click)="removeInfo()" *ngIf="country.import || country.export || country.note">
+      <fa-icon [icon]="faTrash"></fa-icon>
+      Remove Info
+    </button>
+  </iwp-modal-body>
+</iwp-modal>

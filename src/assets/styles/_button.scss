@@ -1,0 +1,9 @@
+@import '~bootstrap/scss/variables';
+
+.btn-transparent {
+  background-color: transparent;
+  color: $white;
+  &:hover {
+    color: $white;
+  }
+}

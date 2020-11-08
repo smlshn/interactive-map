@@ -1,0 +1,8 @@
+.auto-complete-container {
+  min-width: 260px;
+  .list-group {
+    max-height: 400px;
+    display: flex;
+    overflow-y: scroll;
+  }
+}
